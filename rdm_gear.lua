@@ -1,11 +1,11 @@
 functions user_setup ()
 
-sets.precast['Chainspell'] = {body="Duelist's Tabard +2}
+sets.precast['Chainspell'] = {body="Duelist's Tabard +2"}
 sets.precast['Convert'] = {main="Murgleis"}
-sets.precast['Composure'] =
 sets.precast['Saboteur'] = {hands="Estoqueur's Gantherots +2"}
-sets.precast['Spontaneity'] =
-sets.precast['Styme'] =
+-- sets.precast['Composure'] =
+-- sets.precast['Spontaneity'] =
+-- sets.precast['Styme'] =
 
 sets.precast.FC = {
   legs="Blood cuisses",neck="Orunmila's Torque",ring1="Prolix Ring",earring2="Loquacious Earring"
@@ -39,16 +39,16 @@ sets.midcast['Stoneskin'] = set_combine(sets.midcast.EnhancingMagic, {
     legs="Haven Hose",
     neck="Stone Gorget",
     waist="Siegel Sash"
-  }
-)
-sets.midcast['Refresh'] = {
+  })
+sets.midcast['Refresh'] = set_combine(sets.midcast.MaxHaste, {
   legs="Estoqueur's Fuseau +2"
-}
+})
 sets.midcast['Phalanx'] = set_combine(sets.midcast.EnhancingMagic, {
-    }
-)
+    })
 sets.midcast['Stun'] = set_combine(sets.midcast.MaxHaste, {
-  }
-)
+  })
+
+sets.Idle.Town
+sets.Idle.Field
 
 end
