@@ -12,10 +12,11 @@ sets.precast.FC = {
 }
 sets.midcast.MaxHaste = {
 }
+sets.midcast.INT
+sets.midcast.MND
 sets.midcast.MagicAcc = {
 }
 sets.midcast.DarkMagic = {
-  body="Nashira Manteel",
   hands="Blood Finger gauntlets",
   back="Merciful Cape",
   waist="Casso sash",
@@ -46,6 +47,7 @@ sets.midcast['Refresh'] = set_combine(sets.midcast.MaxHaste, {
 sets.midcast['Phalanx'] = set_combine(sets.midcast.EnhancingMagic, {
     })
 sets.midcast['Stun'] = set_combine(sets.midcast.MaxHaste, {
+    neck="Deceiver's torque",ear1="Dark earring",back="Merciful cape",ammo="Sturm's report"
   })
 
 sets.Idle.Town
