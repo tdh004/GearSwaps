@@ -16,22 +16,23 @@ sets.midcast.INT
 sets.midcast.MND
 sets.midcast.MagicAcc = {
 }
-sets.midcast.DarkMagic = {
+sets.midcast['Dark Magic'] = {
   hands="Blood Finger gauntlets",
   back="Merciful Cape",
   waist="Casso sash",
   neck="Deceiver's Torque",
   ear1="Dark earring"
 }
-sets.midcast.ElementalMagic = {
+sets.midcast['Elemental Magic'] = {
   neck="Aesir torque",
   back="Merciful cape"
 }
-sets.midcast.EnfeeblingMagic = {
+sets.midcast['Enfeebling Magic'] = {
   hands="Estoqueur's Gantherots +2",
   neck="Enfeebling Torque"
 }
-sets.midcast.EnhancingMagic = {
+sets.midcast['Enhancing Magic'] = {
+  hands="Estoqueur's Gantherots +2"
   back="Merciful cape"
 }
 sets.midcast.HealingMagic = {}
