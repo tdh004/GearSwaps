@@ -15,7 +15,7 @@ function user_setup()
 	-- sets.precast.JA['Soul Enslavement']
 	
 	sets.precast.FC = {
-		ammo="Impatiens",head="Fallen's burgeonet",legs="Blood cuisses",neck="Orunmila's Torque",ring1="Prolix Ring",earring2="Loquacious Earring",neck="Orunmila's Torque"
+		ammo="Impatiens",head="Fallen's burgeonet",body="Nuevo Coselete",legs="Blood cuisses",neck="Orunmila's Torque",ring1="Prolix Ring",ear2="Loquacious Earring",neck="Orunmila's Torque"
 	}
 	sets.midcast.MagicAcc = {
 		ammo="Sturm's report",body="Corselet",hands="Redan gloves",legs="Eschite cuisses",feet="Heathen's sollerets",ring1="Omega ring",ring2="Balrahn's ring"
