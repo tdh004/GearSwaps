@@ -35,16 +35,13 @@ function user_setup()
 	}
 	sets.midcast['Elemental Magic'] = set_combine(sets.midcast.sTP, {
 			neck="Aesir torque",back="Merciful cape"
-		}
-	)
+		})
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MagicAcc, {
 			neck="Enfeebling torque", waist="Casso sash"
-		}
-	)
+		})
 	sets.midcast['Stun'] = set_combine(sets.midcast.DarkMagic, {
 			head="Quauhpilli helm",body="Nuevo coselete",hands="Heathen's gauntlets",legs="Enif cosciales",feet="Mikinaak greaves",neck="Orunmila's torque",waist="Dynamic belt +1",ring1="Prolix ring",ring2="Balrahn's Ring",ammo="Sturm's report"
-		}
-	)
+		})
 	sets.midcast['Endark'] =  sets.midcast.DarkMagic
 	sets.midcast['Endark II'] =  sets.midcast.DarkMagic
 	sets.midcast['Dread Spikes'] = {
@@ -52,17 +49,14 @@ function user_setup()
 	}
 	sets.midcast['Absorb-TP'] = set_combine(sets.midcast.DarkMagic, {
 			body="Corselet",hands="Heathen's gauntlets",feet="Heathen's Sollerets",ring1="Omega Ring",ring2="Balrahn's Ring",ammo="Sturm's report"
-		}
-	)
+		})
 	sets.midcast['Drain'] = set_combine(sets.midcast.DarkMagic, {
 			body="Corselet",hands="Fall. Fin. Gaunt.",feet="Heathen's Sollerets",ring1="Omega Ring",ring2="Balrahn's Ring",ammo="Sturm's report"
-		}
-	)
+		})
 	sets.midcast['Aspir'] = sets.midcast['Drain']
 	sets.midcast.Bio = set_combine(sets.midcast.DarkMagic, {
 			head="Phorcys salade",body="Armada hauberk",legs="Phorcys dirs",feet="Heathen's Sollerets",ammo="Hagneia Stone",ring1="Tyrant's ring",ring2="Rajas Ring",ear1="Bladeborn Earring",neck="Lissome necklace"
-		}
-	)
+		})
 	sets.midcast['Utsusemi'] = sets.midcast.MaxHaste
 
 	sets.idle.Town = {
@@ -80,8 +74,7 @@ function user_setup()
 	}
 	sets.defense.Reraise = set_combine(sets.defense.PDT, {
 			head="Twilight Helm",body="Twilight Mail"
-		}
-	)
+		})
 	sets.defense.MDT = {
 		ammo="",
 		head="",
@@ -124,13 +117,9 @@ function user_setup()
 		hands="",
 		legs="",
 		feet="",
-		back="Letalis Mantle",
-		waist="Dynamic Belt",
-		neck="Lissome necklace",
-		ring1="Tyrant's ring",
-		ring2="Rajas Ring",
-		ear1="Bladeborn Earring",
-		ear2="Steelflash Earring"
+		back="Letalis Mantle",waist="Dynamic Belt",neck="Lissome necklace",
+		ring1="Tyrant's ring",ring2="Rajas Ring",
+		ear1="Bladeborn Earring",ear2="Steelflash Earring"
 	}
 	sets.engaged.Multi = {
 		ammo="",
@@ -139,45 +128,47 @@ function user_setup()
 		hands="",
 		legs="",
 		feet="",
-		back="Letalis Mantle",
-		waist="Dynamic Belt",
+		back="Letalis Mantle",waist="Dynamic Belt",
 		neck="",
-		ring1="Tyrant's ring",
-		ring2="Rajas Ring",
-		ear1="Bladeborn Earring",
-		ear2="Steelflash Earring"
+		ring1="Tyrant's ring",ring2="Rajas Ring",
+		ear1="Bladeborn Earring",ear2="Steelflash Earring"
 	}
 	sets.engaged.Reraise = set_combine(sets.engaged, {
-			head="Twilight Helm",
-			body="Twilight Mail",
-		}
-	)
-		
+		head="Twilight Helm",
+		body="Twilight Mail",
+	})
 
+	-- Weaponskill sets
+	-- Default set for any weaponskill that isn't any more specifically defined
+	sets.precast.WS = {ammo="Fracas grenade",
+		head="Ignominy burgeonet +1",body="Phorcys korazin",hands="Phorcys mitts",legs="Eschite cuisses",feet="Heathen's sollerets",
+		back="Atheling Mantle",ear1="Brutal Earring",ear2="Bale Earring",ring1="Spiral ring",ring2="Pyrosoul's ring"
+	}
+	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
+		ammo="Fire bomblet",back="Letalis Mantle"
+	})
+     
+	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
+	sets.precast.WS['Catastrophe'] = set_combine(sets.precast.WS, {
+		neck="Soil Gorget",waist="Soil belt",ammo="Bomb core"
+	})
+	sets.precast.WS['Catastrophe'].Acc = set_combine(sets.precast.WS.Acc, {
+		neck="Soil Gorget",waist="Soil belt",ammo="Fire bomblet"
+	})
+	sets.precast.WS['Catastrophe'].Mod = set_combine(sets.precast.WS['Catastrophe'], {
+		neck="Soil Gorget",waist="Soil belt"
+	})
 
-            -- Weaponskill sets
-            -- Default set for any weaponskill that isn't any more specifically defined
-            sets.precast.WS = {ammo="Fracas grenade",
-                    head="Ignominy burgeonet +1",ear1="Brutal Earring",ear2="Bale Earring",
-                    body="Phorcys korazin",hands="Phorcys mitts",ring1="Strigoi Ring",ring2="Pyrosoul Ring",
-                    back="Atheling Mantle",legs="Eschite cuisses",feet="Mikinaak greaves"}
-            sets.precast.WS.Acc = set_combine(sets.precast.WS, {back="Letalis Mantle"})
-     
-            -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-            sets.precast.WS['Catastrophe'] = set_combine(sets.precast.WS, {neck="Soil Gorget",waist="Soil belt",ammo="Bomb core"})
-            sets.precast.WS['Catastrophe'].Acc = set_combine(sets.precast.WS.Acc, {neck="Soil Gorget",waist="Soil belt",ammo="Fire bomblet"})
-            sets.precast.WS['Catastrophe'].Mod = set_combine(sets.precast.WS['Catastrophe'], {neck="Soil Gorget",waist="Soil belt"})
-     
-            sets.precast.WS['Entropy'] = {ammo="Fire bomblet",
+	sets.precast.WS['Entropy'] = {ammo="Fire bomblet",
 					head="Ignominy burgeonet +1",body="Emet harness +1",hands="Redan gloves",legs="Eschite cuisses", feet="Heathen's sollerets",
 					back="Letalis mantle",neck="Soil gorget",waist="Soil belt",ear1="Brutal earring",ear2="Moonshade earring",ring1="Spiral ring",
 					ring2="Rajas ring"
-			}
-            sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS.Acc, {neck="Soil Gorget",legs="Cizin Breeches"})
-            sets.precast.WS['Entropy'].Mod = set_combine(sets.precast.WS['Entropy'], {waist="Soil Belt",legs="Cizin Breeches"})
-     
-            sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {neck="Soil Gorget",ring2="Candent Ring"})
-            sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {neck="Soil Gorget",ring2="Candent Ring"})
-            sets.precast.WS['Resolution'].Mod = set_combine(sets.precast.WS['Resolution'], {waist="Soil Belt",ring2="Candent Ring"})
+	}
+	sets.precast.WS['Entropy'].Acc = set_combine(sets.precast.WS.Acc, {neck="Soil Gorget",legs="Cizin Breeches"})
+	sets.precast.WS['Entropy'].Mod = set_combine(sets.precast.WS['Entropy'], {waist="Soil Belt",legs="Cizin Breeches"})
+
+	sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {neck="Soil Gorget",ring2="Candent Ring"})
+	sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS.Acc, {neck="Soil Gorget",ring2="Candent Ring"})
+	sets.precast.WS['Resolution'].Mod = set_combine(sets.precast.WS['Resolution'], {waist="Soil Belt",ring2="Candent Ring"})
 		
 	end
