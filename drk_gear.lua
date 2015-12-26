@@ -140,12 +140,13 @@ function user_setup()
 
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
-	sets.precast.WS = {ammo="Fracas grenade",
+	-- MaxSTR
+	sets.precast.WS = {
 		head="Ignominy burgeonet +1",body="Phorcys korazin",hands="Phorcys mitts",legs="Eschite cuisses",feet="Heathen's sollerets",
-		back="Atheling Mantle",ear1="Brutal Earring",ear2="Bale Earring",ring1="Spiral ring",ring2="Pyrosoul's ring"
+		ammo="Fracas grenade",back="Atheling Mantle",ear1="Brutal Earring",ear2="Bale Earring",ring1="Spiral ring",ring2="Pyrosoul's ring"
 	}
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-		ammo="Fire bomblet",back="Letalis Mantle"
+		ammo="Fire bomblet",back="Letalis Mantle",legs="Eschite cuisses"
 	})
      
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
