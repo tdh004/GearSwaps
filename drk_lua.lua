@@ -1,12 +1,12 @@
 include('organizer-lib')
-include('Include/AugmentedGear.lua') -- my personal augs file, remove
+-- include('Include/AugmentedGear.lua') -- my personal augs file, remove
 
 --[[
 Things I need to add/ could use help adding are....
 
 1.) line ~1280 : how to get holy waters to equip rings
-2.) Add a rule that when doomed - will auto matically use holy waters w/ rings
-3.) a Toggle to lock weapon/sub for when I was to use sword/shield/gax manuallly for armor break etc
+2.) Add a rule that when doomed - will automatically use holy waters w/ rings
+3.) a Toggle to lock weapon/sub for when I was to use sword/shield/gax manually for armor break etc
 4.) rule that when arcane circle is up, locks founder's body for tp and ws gear w/ added stp for difference
 5.) a check to make sure sams roll is lucky or not, so only use .STP sets when lucky rolls and not-unlucky
 6.) figure out weapon customized PDT sets, hybrid works currently, PDT does not and idk why.
@@ -25,7 +25,7 @@ function get_sets()
 	MaccArray = {"Potency","Resist","Duration"} 
 --Can Delete Any Weapons/Sets That You Don't Need Or Replace/Add The New Weapons That You Want To Use. --
 	WeaponIndex = 1
-	WeaponArray = {"Ragnarok","Caladbolg","Apocalypse","Anguta"} --,"Liberator"
+	WeaponArray = {"Ragnarok","Caladbolg","Apocalypse"} --,"Liberator","Anguta"
 	IdleIndex = 1
 	IdleArray = {"Movement","Regen","Refresh","Regain"} -- Default Idle Set Is Movement --
 	DarkSealIndex = 0 --Index for Dark Seal headpiece Potency(0) vs Duration(1)
@@ -38,7 +38,7 @@ function get_sets()
 
 	Ankou={}
 	Ankou.WSDSTR=	{ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
-	Ankou.DA= 		{ name="Ankou's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
+	Ankou.DA= 		{ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}}
 	Ankou.WSDVIT=	{ name="Ankou's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
 	Ankou.ACC= 		{ name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}}
 	Ankou.FC=		{ name="Ankou's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}}
@@ -48,18 +48,18 @@ function get_sets()
 	
 	sets.Idle = {			
 		ammo="Ginsen",
-		neck="Sanctity necklace",
-		ammo="Staunch Tathlum",
-		ear1="Genmei Earring",
-		ear2="Infused Earring",
+		neck="",
+		ammo="",
+		ear1="",
+		ear2="",
 		body="Lugra cloak +1",
 		hands="Sulevia's Gauntlets +2",
-		left_ring="Defending Ring",
-		right_ring="Moonbeam Ring",
-		back="Moonbeam Cape",
-		waist="Flume belt",
+		left_ring="",
+		right_ring="",
+		back="",
+		waist="",
 		legs="Carmine cuisses +1",
-		feet=ValoFeet.REFRESH}
+		feet=""}
 
 		-- Regen Set --
 	sets.Idle.Regen = set_combine(sets.Idle,{ring2="Chirich Ring"})
@@ -86,19 +86,20 @@ function get_sets()
 	sets.Idle.Refresh.Anguta = set_combine(sets.Idle.Refresh,{main="Anguta"})
 
 		-- Regain Sets --
-	sets.Idle.Regain = set_combine(sets.Idle,{head="Ratri Sallet",
+	sets.Idle.Regain = set_combine(sets.Idle,{
 		ammo="Ginsen",
-		hands=ValoHands.STP,
-		legs=OdysLegs.STP, 
-		feet=ValoFeet.STPACC,
-		neck="Ainia Collar",
-		body=ValoBody.STP,
+		head="Ratri Sallet",
+		hands="",
+		legs="", 
+		feet="",
+		neck="",
+		body="",
 		waist="Kentarch Belt +1",
 		right_ear="Telos Earring",
 		left_ear="Enervating Earring",
 		left_ring="Petrov Ring",
 		right_ring="Chirich Ring",
-		back=Ankou.STP})
+		back=""})
 	sets.Idle.Regain.Liberator = set_combine(sets.Idle.Regain,{main="Liberator"})
 	sets.Idle.Regain.Ragnarok = set_combine(sets.Idle.Regain,{main="Ragnarok"})
 	sets.Idle.Regain.Caladbolg = set_combine(sets.Idle.Regain,{main="Caladbolg"})
@@ -108,7 +109,7 @@ function get_sets()
 	sets.Twilight = set_combine(sets.Idle.Regen,{head="Twilight Helm",body="Twilight Mail"})
 
 	-- JA Sets --
-	sets.JA								= {}
+	sets.JA = {}
 	sets.precast.JA['Arcane Circle']	= {feet="Ignominy Sollerets +1"}
 	sets.precast.JA['Blood Weapon']		= {body="Fallen's Cuirass"}
 	sets.precast.JA['Dark Seal']		= {head="Fallen's Burgeonet"}
@@ -120,26 +121,24 @@ function get_sets()
 	sets.precast.JA['Consume Mana']		= {}
 	sets.precast.JA['Arcane Crest']		= {}
 	sets.precast.JA['Scarlet Delirium']	= {}
-	sets.precast.JA['Soul Enslavement']	= {}
-
+	sets.precast.JA['Soul Enslavement']	= {}	
+	
 	sets.Precast = {}
 	-- Fastcast Set --
 	sets.Precast.FastCast = {
-		head="Cizin helm +1",
-		body="Nuevo coselete",
-		hands="Leyline gloves",
+		ammo="Sapience Orb",
+		head="Carmine Mask +1", --14
+		body="Nuevo coselete", --5
+		hands="Leyline Gloves", --6
 		legs="Enif Cosciales",
-		neck="Orunmila's Torque",
+		neck="Orunmila's Torque", --5
 		ring1="Prolix Ring",
 		ear1="Etiolation earring",
 		ear2="Loquac. Earring"
 	}
 
 	-- Precast Dark Magic --
-	sets.Precast['Dark Magic'] = set_combine(sets.Precast.FastCast,{
-			head="Fall. Burgeonet +1"
-		}
-	)
+	sets.Precast['Dark Magic'] = set_combine(sets.Precast.FastCast,{head="Fallen's burgeonet +1"})
 
 	-- Midcast Base Set --
 	sets.Midcast = {}
@@ -149,35 +148,22 @@ function get_sets()
 
 	-- Dark Magic Set --
 	sets.Midcast['Dark Magic'] = {
-		ammo="Pemphredo Tathlum",
-		head="Ignominy Burgonet +3",
-		body="Carmine Scale Mail",
-		hands="Fallen's finger gauntlets +1",
-		legs="Eschite cuisses",
-		feet="Ignominy Sollerets +3",
-		neck="Erra Pendant",
-		waist="Casso sash",
-		left_ear="Hermetic Earring",
-		right_ear="Dark Earring",
-		left_ring="Stikini Ring",
-		right_ring="Evanescence Ring",
-		back="Niht Mantle",}
-	
-	-- Absorb Set --
-    sets.Midcast.Absorb = {
-		ammo="Pemphredo Tathlum",
-		head="Ignominy Burgonet +3",
-		body="Carmine Scale Mail",
-		legs="Eschite cuisses",
-		feet="Ratri Sollerets",
+		ammo="Plumose Sachet",
+		head="Ig. Burgonet +2",
+		body="Demon's Harness",
+		hands={ name="Fall. Fin. Gaunt. +1", augments={'Enhances "Diabolic Eye" effect',}},
+		legs={ name="Eschite Cuisses", augments={'MP+80','Accuracy+10','Enmity+7',}},
+		feet="Flam. Gambieras +1",
 		neck="Erra Pendant",
 		waist="Casso Sash",
-		left_ear="Hermetic Earring",
-		right_ear="Dark Earring",
-		right_ring="Kishar Ring",
-		hands="Pavor Gauntlets",
-		left_ring="Evanescence Ring",
-		back="Chuparrosa Mantle",}
+		left_ear="Dark Earring",
+		right_ear="Hermetic Earring",
+		left_ring="Archon Ring",
+		right_ring="Evanescence Ring",
+		back="Merciful Cape"
+	}
+		-- Absorb Set --
+    sets.Midcast.Absorb = sets.Midcast['Dark Magic']
 	sets.Midcast.Absorb.Resist = set_combine(sets.Midcast.Absorb,{
 		head="Carmine Mask +1", 
 		hands="Leyline Gloves",
@@ -186,20 +172,22 @@ function get_sets()
 		waist="Eschan Stone", 
 		feet="Ignominy Sollerets +3",
 		back=Ankou.FC})
-	sets.Midcast.Absorb.Duration = set_combine(sets.Midcast.Absorb,{hands="Onyx Gadlings", legs="Black Cuisses"})
+	sets.Midcast.Absorb.Duration = set_combine(sets.Midcast.Absorb,{body="Corselet",hands="Heathen's gauntlets +1"})
 			
 	-- Absorb-TP Set --
     sets.Midcast['Absorb-TP'] = set_combine(sets.Midcast.Absorb,{hands="Heathen's Gauntlets +1"})
 
 	-- Stun Sets --
 	sets.Midcast.Stun = set_combine(sets.Midcast['Dark Magic'],{
-		head="Carmine Mask +1",
-		hands="Leyline Gloves",
-		left_ring="Regal Ring",
-		waist="Eschan Stone",
-		legs="Eschite cuisses",
-		feet="Ignominy Sollerets +3",
-		back=Ankou.FC})
+    ammo="Plumose Sachet",
+    head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
+    body={ name="Nuevo Coselete", augments={'Mag. Acc.+4','"Fast Cast"+5',}},
+    legs="Enif Cosciales",
+    feet="Flam. Gambieras +1",
+    neck="Orunmila's Torque",
+    waist="Ioskeha Belt",
+    right_ear="Hermetic Earring",
+    left_ring="Archon Ring",})
 	sets.Midcast.Stun.Resist = set_combine(sets.Midcast.Stun,{})
 	sets.Midcast.Stun.Duration = set_combine(sets.Midcast.Stun,{left_ring="Stikini Ring",feet="Ratri Sollerets",})
 
@@ -1668,8 +1656,8 @@ end
 function select_default_macro_book()
 	-- Default macro set/book
 	if player.sub_job == 'SAM' then
-		set_macro_page(2, 8)
+		set_macro_page(2, 2)
 	else
-		set_macro_page(1, 8)
+		set_macro_page(1, 2)
 	end
 end
